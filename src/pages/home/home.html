@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Minecraft Detector
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="setHosts()">SHOW ME WHAT YOU GOT</button>
+  <ion-card *ngFor="let host of hosts">
+    <ion-card-header>
+       {{ host.data }} 
+    </ion-card-header> 
+<!--   <ion-card-content> 
+  <ion-card-title>
+      {{ note.title }}
+  </ion-card-title> 
+  <p> {{ note.content }} </p>
+ </ion-card-content> --> 
+</ion-card> 
+</ion-content>
