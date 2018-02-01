@@ -8,17 +8,19 @@ import 'rxjs';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private hosts:any;
+  private hosts:any = {
+    matches:[]
+  };
 
   constructor(public navCtrl: NavController,
-              public shodan: ShodanSearchProvider) {}
+              public shodan: ShodanSearchProvider) {
+                this.setHosts();
+              }
   setHosts():void {
-    this.shodan.getHostSearch()
-    .subscribe(data => {
-      this.hosts = data;
-      console.log(data);
+    this.hosts = this.shodan.getHostSearch().subscribe(data => {
+    this.hosts = data;
+    console.log(data)
     });
-    this.setPurr();
   }
   
 /*   setHostsT():void {
@@ -32,6 +34,6 @@ export class HomePage {
   } */
 
   setPurr():void {
-    this.hosts = this.hosts.matches;
+    this.hosts = this.hosts.matches.matches;
   }
 }

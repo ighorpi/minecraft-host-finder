@@ -8,15 +8,16 @@
 
 <ion-content padding>
   <button ion-button (click)="setHosts()">SHOW ME WHAT YOU GOT</button>
-  <ion-card *ngFor="let host of hosts">
+  <ion-card *ngFor='let host of hosts["matches"]'>
     <ion-card-header>
-       {{ host.data }} 
+      {{ host.data }}
     </ion-card-header> 
-<!--   <ion-card-content> 
+   <ion-card-content> 
   <ion-card-title>
-      {{ note.title }}
+      {{ host.ip_str }}
   </ion-card-title> 
-  <p> {{ note.content }} </p>
- </ion-card-content> --> 
+  <div></div>
+  <p> {{ host.timestamp | date }} </p>
+ </ion-card-content>
 </ion-card> 
 </ion-content>
