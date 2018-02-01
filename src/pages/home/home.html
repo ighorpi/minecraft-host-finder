@@ -5,19 +5,25 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  <button ion-button (click)="setHosts()">SHOW ME WHAT YOU GOT</button>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor='let host of hosts["matches"]'>
     <ion-card-header>
       {{ host.data }}
     </ion-card-header> 
    <ion-card-content> 
   <ion-card-title>
-      {{ host.ip_str }}
+    <label>IP:</label>
+      {{ host.ip_str }}:{{ host.port }}
   </ion-card-title> 
-  <div></div>
-  <p> {{ host.timestamp | date }} </p>
+    <label>Hostname:</label>
+    <p>{{host.hostnames}}</p>
+    <label>Domain:</label>
+    <p>{{host.domain}}</p>
+<!--   <p> {{ host.timestamp | date:'fullDate' }} </p> -->
  </ion-card-content>
-</ion-card> 
+</ion-card>
 </ion-content>
