@@ -32,7 +32,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "lodash": ">=4.17.21"
   },
   "description": "An Ionic project"
 }
